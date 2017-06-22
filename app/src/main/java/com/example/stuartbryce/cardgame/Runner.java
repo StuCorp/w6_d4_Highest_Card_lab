@@ -13,19 +13,16 @@ public class Runner {
         Player player1 = new Player("Stuart");
         Player player2 = new Player("Absent Sam");
         Dealer dealer = new Dealer();
-        player1.requestCard(dealer);
-        player1.printCurrentCard();
-        player2.requestCard(dealer);
-        player2.printCurrentCard();
+        Game game = new Game(player1, player2, dealer);
+        game.run();
 
-        Game game = new Game(player1, player2);
 
 //        ArrayList<Player>  players = new ArrayList<Player>(player1, player2);
 
 
-
-        int result = game.compareCards(player1.getCurrentCard(), player2.getCurrentCard());
-        game.displayResult(result);
+//
+//        int result = game.compareCards(player1.getCurrentCard(), player2.getCurrentCard());
+//        game.displayResult(result);
 
 
     }

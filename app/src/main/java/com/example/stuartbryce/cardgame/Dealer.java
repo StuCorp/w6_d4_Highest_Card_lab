@@ -11,25 +11,33 @@ import cards.CardValue;
 
 public class Dealer {
 
+    Deck deck;
 
-    public CardSuit generateSuit(){
-        CardSuit[] suits = CardSuit.values();
-        Random random = new Random();
-        int index = random.nextInt(suits.length);
-        return suits[index];
+    public Dealer() {
+        this.deck = new Deck();
+        deck.fillDeck();
     }
 
-    public CardValue generateValue(){
-        CardValue[] cardVals = CardValue.values();
-        Random random = new Random();
-        int index = random.nextInt(cardVals.length);
-        return cardVals[index];
-    }
+//    public CardSuit generateSuit(){
+//        CardSuit[] suits = CardSuit.values();
+//        Random random = new Random();
+//        int index = random.nextInt(suits.length);
+//        return suits[index];
+//    }
+//
+//    public CardValue generateValue(){
+//        CardValue[] cardVals = CardValue.values();
+//        Random random = new Random();
+//        int index = random.nextInt(cardVals.length);
+//        return cardVals[index];
+
 
     public Card deal(){
-        CardSuit cardSuit = generateSuit();
-        CardValue cardValue = generateValue();
-        Card card = new Card(cardSuit, cardValue);
+        Card card = deck.popRandomCard();
+
+//        CardSuit cardSuit = generateSuit();
+//        CardValue cardValue = generateValue();
+//        Card card = new Card(cardSuit, cardValue);
         return card;
     }
 
